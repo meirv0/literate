@@ -1,20 +1,21 @@
 ﻿clientModule.controller('questionnaire', function ($rootScope, $scope, $http, $location) {
           
 		   
-    
+    		
                 
 
 
     $scope.load = function () {
-                
-
+        $scope.gethint = false;
+        $rootScope.showMenu = true;
         var i = parseInt(localStorage.getItem("i"));
-        var answer = localStorage.getItem("answer") != null ? localStorage.getItem("answer").split(',') : "";
+        var answer = localStorage.getItem("answer") != null ? localStorage.getItem("answer").split(',') : null;
         var confusedWord = localStorage.getItem("confusedWord") != null ? localStorage.getItem("confusedWord").split(',') : "";
         var correctWord = localStorage.getItem("confusedWord") != null ? localStorage.getItem("correctWord").split(',') : "";
         var locCorrectAnswers = parseInt(localStorage.getItem("correctAnswers"));
         var number = parseInt(localStorage.getItem("number"));
         if (answer != null) {
+            
             $scope.gethint = true;
             $scope.i = i == null ? 0 : i;
             $scope.answer = answer;
@@ -202,11 +203,7 @@
         $scope.check = true;
     }
 
-    $rootScope.convertToDate = function (timeStamp) {
-
-        var newNum = timeStamp;
-        return new Date(newNum);
-    }
+    
 
     $rootScope.wordFilter = function (word) {
         $rootScope.filterWord = word;

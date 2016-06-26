@@ -2,8 +2,16 @@
 			
     $rootScope.statisticsPage = function () {
 
-
+        $rootScope.showMenu = true;
         $rootScope.filterWithWord = null;
+
+        $rootScope.convertToDate = function (timeStamp) {
+
+            var newNum = timeStamp;
+            return new Date(newNum);
+        }
+        	
+
         $http({
             method: 'GET',
             url: localHost + projectPath + '/getQuestions',
