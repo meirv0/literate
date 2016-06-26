@@ -1,0 +1,30 @@
+ <div ng-init="load()">
+          		      	   
+                    <div>
+                        
+                        <span ng-repeat="word in temp track by $index" ng-click="selectedWord(word, $index); quiz(word, $index)">{{word}} </span>
+                    </div>
+                    <br /> <br /> <br /> <br /> <br />
+
+                    <div>
+                        <span ng-repeat="a in answer track by $index">{{a}} </span>
+                    </div>
+
+                    <div>
+                        <span ng-repeat="c in confusedWord track by $index" ng-click="choice(c, $index)">{{c}} </span>
+                    </div>
+
+                    <br /> <br />
+
+                    <div>
+                        <button ng-show="gethint"  ng-click="getAClue()">hint</button>
+                        <button ng-show="check" ng-click="checkAnswer()">check</button>
+
+                        <br />
+
+                        <h4 ng-show="result">The word chosen is : {{correctWord.join("");}} Your answer is : {{answer.join("");}}  Your score is {{score}}%</h4>
+                    </div>
+
+	
+
+</div>

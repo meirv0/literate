@@ -1,0 +1,18 @@
+<div ng-controller="loginController" ng-show="loggedIn">
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="inputName">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Login Name" ng-model="name">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="pass">
+        </div>
+
+
+        <button type="submit" class="btn btn-default" ng-click="processForm()">Sign in</button>
+        <br />
+        <span>Do not have an account?  </span> <span ng-click="createCustomer()">Click on me</span>
+    </form>
+    <div id="formInfo">{{ failure }}</div>
+</div>	

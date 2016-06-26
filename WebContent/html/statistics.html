@@ -1,0 +1,27 @@
+<div>
+
+    <br />
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading">All statistics</div>
+        <table class="table">
+            <thead>	
+                <tr>
+                    <th>Date</th>
+                    <th>word</th>
+                    <th>answer</th>
+                    <th>grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="s in statistics | filter : filterByWord ">
+                    <th>{{convertToDate(s.date) |  date:'medium'}}</th>
+                    <th ng-click="filterWord(s.word)">{{s.word}}</th>
+                    <th>{{s.answer}}</th>
+                    <th>{{s.grade}}%</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
