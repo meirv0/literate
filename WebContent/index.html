@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html >	
+﻿<!DOCTYPE html >		
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="client">
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
@@ -10,24 +10,28 @@
     <link href="StyleSheet.css" rel="stylesheet" />
     <title></title>				
 </head>																				
-<body>							
-    <div >										
+	<body>									
+    <div >																	
         <script src="paragraph.js"></script>
-	        <div class="jumbotron" ng-controller="pageHeader">
+        <script src="js/login.js"></script>
+        <script src="js/statistics.js"></script>
+        <script src="js/createAccount.js"></script>
+        <script src="js/questionnaire.js"></script>
+	        <div class="jumbotron">
 	            <h1 class="main-header">literate <small>alpha</small></h1>
 	        <div id="logo">
 	           						
 	        </div>
 	        </div>
-        <div ng-controller="menu" id="menu">
+        <div id="menu" >
                 
-                <div ng-controller="adminMenu" id="adminMenu" >
+                <div id="adminMenu" >
                     <div class="list-group">
                        
-                        <div>
+                        <div ng-show="showMenu">
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#/paragraph">paragraph</a></li>
-                                <li ng-click="statisticsPage()"><a href="#/statistics">statistics</a></li>
+                                <li><a href="#/statistics">statistics</a></li>
                             </ul>
                         </div>
                     </div>
@@ -35,11 +39,11 @@
                 
               
       </div>
-        
+        <div id="main">
             <ng-view></ng-view>
-           
-		
-    </div>
+
+        </div>
+        </div>
     <div id="footer">
         &copy; This site was Created by meir.
     </div>

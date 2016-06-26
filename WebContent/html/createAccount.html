@@ -1,8 +1,6 @@
-<div ng-show="create">
+<div>	
     Create Customer
     <form class="form-inline">
-        <div class="alert alert-info" role="alert" ng-show="showCreateCustError">{{ results.createCustomer }}</div>
-        <div class="alert alert-success" role="alert" ng-show="showCreateCustSuccess">{{ results.createCustomer }}</div>
         <div class="form-group">
             <label class="sr-only" for="inputName">Name</label>
             <input type="text" class="form-control" id="inputName" placeholder="Name (min len = 3)" ng-model="custName">
@@ -13,4 +11,5 @@
         </div>
         <button type="submit" class="btn btn-default" ng-click="submitCreateCustomer()">Create</button>
     </form>
+    <div id="formInfo">{{ failure }}</div>
 </div>

@@ -49,6 +49,7 @@ public class Rest {
 				id = rs.getLong(1);
 				flag = true;
 			}
+			System.out.println(id);
 			return flag ? Long.toString(id) : "0";
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -154,6 +155,7 @@ public class Rest {
 			}
 			
 			map.put("question", questions);
+					
 			return map;
 		} catch (SQLException e) {
 			e.printStackTrace();
