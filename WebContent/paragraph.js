@@ -1,0 +1,1 @@
+﻿var paragraph = ["Never", "hate", "your", "haters", "because", "they", "are", "the", "ones", "who", "think", "you're", "better", "than", "them"];
