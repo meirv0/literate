@@ -8,6 +8,9 @@
     $scope.load = function () {
         $scope.gethint = false;
         $rootScope.showMenu = true;
+
+        
+
         var i = parseInt(localStorage.getItem("i"));
         var answer = localStorage.getItem("answer") != null ? localStorage.getItem("answer").split(',') : null;
         var confusedWord = localStorage.getItem("confusedWord") != null ? localStorage.getItem("confusedWord").split(',') : "";
@@ -15,7 +18,16 @@
         var locCorrectAnswers = parseInt(localStorage.getItem("correctAnswers"));
         var number = parseInt(localStorage.getItem("number"));
         if (answer != null) {
+
             
+            var checkButton = true;
+            for (index = 0; index < answer.length; ++index) {
+                if (answer[index] == "_") {
+                    checkButton = false;
+                }
+            }
+            $scope.check = checkButton;
+
             $scope.gethint = true;
             $scope.i = i == null ? 0 : i;
             $scope.answer = answer;
