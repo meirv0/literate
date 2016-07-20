@@ -2,7 +2,7 @@
 
     $scope.submitCreateCustomer = function () {
 
-        if ($scope.custName != null && $scope.custPass != null) {
+        if ($scope.custName != null && $scope.custPass   != null) {
             $http({
                 method: 'POST',
                 url: localHost + projectPath + '/createCustomer',
